@@ -1,0 +1,172 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font: 12pt Arial;
+    line-height: 1.2;
+}
+.header{
+    /* kaspersky header image*/
+    width:100%;
+
+}
+/* .footer{
+    width:100%;
+} */
+ul, li{
+    font-size: 12pt;
+}
+h3 {
+    font-size: 15pt;
+    font-weight: bold;
+    width: 100%;
+    border-bottom: 1px solid;
+    color: rgb(0,109,85);
+}
+.Critical{
+    background-color:#ff4d4d;
+    font-weight: bold;
+    font-size:10pt;
+}
+.Medium{
+    background-color:#FF8C00;
+    font-weight: bold;
+    font-size:10pt;
+}
+.High{
+    background-color:#FA8072;
+    font-weight: bold;
+    font-size:10pt;
+}
+.Low{
+    background-color:#99e699;
+    font-weight: bold;
+    font-size:10pt;
+}
+p {
+    text-align: justify;
+    font: Arial;
+    /* font:20pt; */
+}
+li {
+    margin: 10px 0;
+}
+.vuln-table{
+    word-break:break-all; /* breaks words in cpe column. otherwise it looked ugly*/
+    page-break-after: always;
+}
+#table_div{
+    margin-left:10px;
+    margin-right:10px;
+    padding:10px;
+}
+table {
+    /* margin-top:20px; */
+    /* margin-left:20px; */
+    margin-right:20px;
+    border-collapse: collapse;
+    overflow-wrap: break-word;
+    width:100%;
+    max-width: 850px; 
+    /* page-break-inside:auto; */
+    /* table-layout: fixed;  */
+    border: 1px solid black;
+    font-size: 8pt;
+    /* padding-bottom: 100px;
+    margin-bottom: 100px; */
+    /* display:block; */
+}
+td {
+    height: 20px;
+    border: 1px solid black;
+    font-size: 8pt; 
+    /* width:10px; */ 
+ }
+tr{
+    page-break-inside: avoid; /* life saver!!! makes tables split rows normally*/
+    display: "inline-table" ;
+}
+/* thead { display: table-row-group; } this is used to prevent table headers spawning on page break */ 
+th{
+    /* height: 50px; */
+    font-size: 10pt;
+    border: 1px solid black;   
+}
+#first_page_logo { /* top kaspersky logo*/
+    margin-left: -15mm;
+    margin-top:-10mm;
+    width: 125%;
+    padding:0px;
+}
+/* .incidents_header{
+    margin-top:20px;
+    margin-left:50px;
+} */
+.page-break{
+    /* margin-top:50px; */
+    padding-top:50px;
+    margin-left:20px;
+    margin-right:20px;
+    page-break-before:always;
+}
+/* #table_div{
+    page-break-after:always;
+} */
+.page {
+    width: 85%;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 10mm auto;
+}
+
+/* #header{
+    background-color:  black;
+    width:100%;
+    height:200px;
+    position: absolute;
+    /* top:-100px;
+    left:-100px; */
+/*} */
+.title_page_footer { /* date on the title page*/
+    color: rgb(0,109,85);
+    width: 100%;
+    top: 450px;
+    position: relative;
+    text-align: center;
+    margin: 0;
+    font-size: 10pt Arial;
+}
+
+/* pre {
+    margin: 0;
+    /*font: 10pt "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";*/
+    /* font: 11pt Arial;
+    line-height: 1.5;
+}  */
+
+@media print {
+    /*.divFooter {
+        position: fixed;
+        background: url("footer.png");
+        height: 100px; /* put the image height here */
+       /* width: 100px; /* put the image width here */
+        /*bottom: 0;
+    } */
+    #first_page_logo { /* title img id */
+        margin-left: -15mm;
+        margin-top:-10mm;
+        width: 210mm;
+    }
+    /* .page {
+        margin: 0;
+        width: initial;
+        border: 0px;
+        padding: 0;
+    } */
+/* 
+    footer {
+        display: none;
+    } */
+}

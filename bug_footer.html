@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script>
+                function substitutePdfVariables() {
+        
+                    function getParameterByName(name) {
+                        var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+                        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+                    }
+        
+                    function substitute(name) {
+                        var value = getParameterByName(name);
+                        var elements = document.getElementsByClassName(name);
+        
+                        for (var i = 0; elements && i < elements.length; i++) {
+                            elements[i].textContent = value;
+                        }
+                    }
+        
+                    ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection']
+                        .forEach(function(param) {
+                            substitute(param);
+                        });
+                }
+            </script>
+</head>
+<body onload="substitutePdfVariables()">
+    <div class="page_number" style="position:absolute;bottom:20px;left:40px, z-index:1">
+        <p style="font: 18pt Arial;color:white;">Page 
+            <span class="page"></span>/<span class="topage"></span>
+        </p>
+    </div>
+    <img style="width:1400px;height:100px;margin-left:-150px;position:relative;bottom:-10px; z-index: -1;" src="bug_footer.png"> 
+</body>
+</html>
